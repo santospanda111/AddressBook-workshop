@@ -3,10 +3,12 @@ import com.addressbook.AddressbookMain;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 
 public class AddressbookTest {
+
     /**
      * this will check the contact is added or not.
      */
@@ -50,4 +52,15 @@ public class AddressbookTest {
         Assertions.assertEquals("751011",contact.getInput());
     }
 
+    /**
+     * this test case will check that the value is edited according to the user input.
+     */
+    @Test
+    public void givenEditNameInAddressBookWhenNameReturnSameValue() {
+        AddressbookMain addressBook = new AddressbookMain();
+        Addressbook contacts = new Addressbook("Rohit", "Sharma", "Chakhan", "maharashtra", "pune", "123456", "1234567899", "abc@gmail.com");
+        addressBook.addContacts(contacts);
+        Addressbook editContact = addressBook.editContacts(addressBook.contactList, "address","editContacts");
+        Assertions.assertEquals("Chakhan", editContact.address);
+    }
 }
