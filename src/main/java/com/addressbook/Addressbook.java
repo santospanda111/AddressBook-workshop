@@ -1,5 +1,7 @@
 package com.addressbook;
 
+import java.util.*;
+
 public class Addressbook {
     /**
      * added variables through which we can store values.
@@ -26,12 +28,5 @@ public class Addressbook {
         this.zip=zip;
         this.phoneNumber=phoneNumber;
         this.email=email;
-    }
-    /**
-     * Added welcome message
-     * @param args
-     */
-    public static void main(String[] args) {
-        System.out.println("Welcome to AddressBook System");
     }
 }
